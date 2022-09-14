@@ -1,7 +1,7 @@
 # C++ courses
 
 ### About repo
-* [Сборочное окружение](.https://github.com/juliazadorozhnaya/Algorithms/tree/main/C%2B%2B%20Design%20and%20Programming)
+* [Сборочное окружение](https://github.com/juliazadorozhnaya/Algorithms/tree/main/C%2B%2B%20Design%20and%20Programming)
 * [Работа с терминалом и простой проект](./02_TerminalProject)
 * [Многофайловая сборка](./03_Multifile)
 * [Обработка текстов и сценарии](./04_Text)
