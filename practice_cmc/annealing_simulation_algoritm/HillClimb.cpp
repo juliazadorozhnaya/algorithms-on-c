@@ -12,7 +12,7 @@ typedef std::chrono::high_resolution_clock Time;
 typedef std::chrono::duration<double> double_seconds;
 
 template <typename T>
-void print2dvector(const std::vector<std::vector<T>> vec) //один из способов векторного отображения информации
+void print2dvector(const std::vector<std::vector<T>> vec) //one of the ways of vector display of information
 {
     for (const auto &row : vec)
     {
@@ -23,7 +23,7 @@ void print2dvector(const std::vector<std::vector<T>> vec) //один из способов век
 }
 
 template <typename T>
-void print1dvector(const std::vector<T> vec)   //один из способов векторного отображения информации
+void print1dvector(const std::vector<T> vec)   //one of the ways of vector display of information
 
 {
     for (const auto &e : vec)
@@ -32,7 +32,7 @@ void print1dvector(const std::vector<T> vec)   //один из способов векторного ото
     std::cout << std::endl;
 }
 
-HillClimb::HillClimb(double **matrix, int p, int t, int k, int c)    //верх на графике
+HillClimb::HillClimb(double **matrix, int p, int t, int k, int c)    //up on the chart
 {
     distance_matrix = matrix;
     parallel_tracks = p;
@@ -105,7 +105,7 @@ std::pair<int, int> HillClimb::next_state()
     return std::make_pair(i, j);
 }
 
-void HillClimb::update_state(int index_a, int index_b, State &state)   //обновление информации
+void HillClimb::update_state(int index_a, int index_b, State &state)   //updating information
 {
     int a = state[index_a];
     int b = state[index_b];
@@ -177,7 +177,7 @@ double HillClimb::score(State state)
     return score;
 }
 
-State HillClimb::hill_climb(bool random_init, double duration, const int seed = 0)   //минутное описание точки экстремума на графике
+State HillClimb::hill_climb(bool random_init, double duration, const int seed = 0)   //minute description of the extremum point on the graph
 {
     duration *= 60; // Assumed in minutes originally
     auto initial_time = Time::now();

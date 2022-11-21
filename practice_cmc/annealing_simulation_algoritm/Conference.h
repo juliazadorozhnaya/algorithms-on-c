@@ -43,7 +43,7 @@ class Processor
     void initTracks(int parallelTracks, int sessionsInTrack, int worksInSession);
 
     /**
-     * возвращает число параллельных треков, номер сессии и тд
+     * returns the number of parallel tracks, session number, etc.
      */
     int getParallelTracks();
     int getSessionsInTrack();
@@ -51,11 +51,11 @@ class Processor
     Track getTrack(int index);
 
     /**
-     * запускает работы в процессорах
-     * @param trackIndex индекс трека
-     * @param sessionIndex индекс сессии
-     * @param workIndex индекс работы
-     * @param workId номер работы
+     * starts work in processors
+     * @param trackIndex track index
+     * @param sessionIndex session index
+     * @param workIndex work index
+     * @param workId job number
      */
     void setwork(int trackIndex, int sessionIndex, int workIndex, int workId);
 

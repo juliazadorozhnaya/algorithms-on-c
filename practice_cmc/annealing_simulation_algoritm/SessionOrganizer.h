@@ -13,7 +13,7 @@
 using namespace std;
 
 /**
- * SessionOrganizer считывает матрицу работ и распределяет их по процессорам */
+ * SessionOrganizer read the matrix of works and distributes them to processors */
 class SessionOrganizer
 {
   private:
@@ -33,7 +33,7 @@ class SessionOrganizer
     SessionOrganizer(string filename);    void readInInputFile(string filename);
 
     /**
-     * распределение работ по процессорам
+     *distribution of work on processors
      */
     void organizeworks();    
       

@@ -2,12 +2,12 @@
 #define UTIL_H
 
 /**
- * Utility Function раздел€ет стринговые сообщени€. результаты хран€тс€ в массиве result[].
+ * Utility Function separates string messages. the results are stored in an array result[].
  * 
- * @param message раздел€ема€ строка
- * @param delimter delimiter раздел€ет строки
- * @param result результаты хран€тс€ в этом массиве
- * @param expcted длина результата
+ * @param message shared string
+ * @param delimter delimiter splits lines
+ * @param result the results are stored in this array
+ * @param expcted result length
  */
 void splitString(string message, string delimiter, string result[], int n)
 {
@@ -25,7 +25,7 @@ void splitString(string message, string delimiter, string result[], int n)
     i++;
     if (i != n)
     {
-        cout << "ћатрица имеет неконкретный формат.";
+        cout << "the matrix has an incorrect format.";
         exit(0);
     }
 }

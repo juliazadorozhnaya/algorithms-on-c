@@ -2,7 +2,7 @@
 
 #include "Track.h"
  
-//дорожка процессоров
+//processor track
 
 Track::Track(int sessionsInTrack)
 {

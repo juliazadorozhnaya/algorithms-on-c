@@ -5,20 +5,20 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    // Парсинг входных данных
+    // input data parsing
     if (argc < 3)
     {
-        cout << "Потерянные данные\n";
-        cout << "Корректный формат: \n";
+        cout << "Lost Data\n";
+        cout << "Correct format: \n";
         cout << "./main <input_filename> <output_filename>";
         exit(0);
     }
     string inputfilename(argv[1]);
 
-    // Запуск анализа работ процессоров
+    // Starting the analysis of the work of processors
     SessionOrganizer *organizer = new SessionOrganizer(inputfilename);
 
-    // Разгрузка работ по процессорам на основе параллельности
+    // Unloading of work on processors based on parallelism
     organizer->organizeworks();
 
     organizer->printSessionOrganiser(argv[2]);

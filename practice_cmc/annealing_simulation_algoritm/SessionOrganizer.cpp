@@ -3,7 +3,7 @@
 #include "HillClimb.h"
 #include <vector>
 
-//организации распределения работ в рамках сессии
+//organization of work distribution within the session
 
 SessionOrganizer::SessionOrganizer()
 {

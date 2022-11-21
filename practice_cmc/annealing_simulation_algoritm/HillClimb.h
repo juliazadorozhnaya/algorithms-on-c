@@ -33,16 +33,16 @@ private:
   double score(State);
 
 public:
-  // конструктор
+  // constructor
   HillClimb(double **, int, int, int, int);
 
-  // график идет наверх
+  // the graph goes up
   State hill_climb(bool, double, const int);
 
-  // переход от одного состояния в другое
+  // transition from one state to another
   double score_increment(int, int, State) const;
 
-  //обновление состояния
+  //status update
   void update_state(int, int, State &);
 };
 

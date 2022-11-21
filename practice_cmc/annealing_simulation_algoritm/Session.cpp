@@ -3,7 +3,7 @@
 
 #include "Session.h"
  
-//описание всех сессий на процессорах
+//description of all sessions on processors
 
 Session::Session()
 {
@@ -38,7 +38,7 @@ int Session::getwork(int index)
     }
     else
     {
-        cout << "Индекс за границей доступного - Session::getwork" << endl;
+        cout << "Index of the available abroad- Session::getwork" << endl;
         exit(0);
     }
 }
@@ -51,12 +51,12 @@ void Session::setwork(int index, int workId)
     }
     else
     {
-        cout << "Индекс за границей доступного  - Session::setwork" << endl;
+        cout << "Index of the available abroad  - Session::setwork" << endl;
         exit(0);
     }
 }
  
-//печать сессии
+//printing a session
 
 void Session::printSession()
 {

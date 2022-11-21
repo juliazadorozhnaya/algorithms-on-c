@@ -4,7 +4,7 @@
 #include "Session.h"
 
 /**
- * Трек содержит очередь сессий
+ * The track contains a queue of sessions
  *
  */
 

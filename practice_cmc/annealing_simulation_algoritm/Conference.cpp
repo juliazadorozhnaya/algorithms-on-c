@@ -1,14 +1,15 @@
 
 #include "Conference.h"
 
-Processor::Processor()   //работа на процессах
-{
+//work on processors
+Processor::Processor()  {
     this->parallelTracks = 0;
     this->sessionsInTrack = 0;
     this->worksInSession = 0;
 }
 
-Processor::Processor(int parallelTracks, int sessionsInTrack, int worksInSession)    //описание процессора
+//processor description
+Processor::Processor(int parallelTracks, int sessionsInTrack, int worksInSession)    
 {
     this->parallelTracks = parallelTracks;
     this->sessionsInTrack = sessionsInTrack;
@@ -16,7 +17,8 @@ Processor::Processor(int parallelTracks, int sessionsInTrack, int worksInSession
     initTracks(parallelTracks, sessionsInTrack, worksInSession);
 }
 
-void Processor::initTracks(int parallelTracks, int sessionsInTrack, int worksInSession)     //подсчет треков
+//counting tracks
+void Processor::initTracks(int parallelTracks, int sessionsInTrack, int worksInSession)    
 {
     tracks = (Track *)malloc(sizeof(Track) * parallelTracks);
     for (int i = 0; i < parallelTracks; i++)
@@ -31,7 +33,8 @@ void Processor::initTracks(int parallelTracks, int sessionsInTrack, int worksInS
     }
 }
 
-int Processor::getParallelTracks()  //задачи для процессора
+//tasks for the processor
+int Processor::getParallelTracks()  
 {
     return parallelTracks;
 }
@@ -59,7 +62,8 @@ Track Processor::getTrack(int index)
     }
 }
 
-void Processor::setwork(int trackIndex, int sessionIndex, int workIndex, int workId)         //установка работы
+//installation work
+void Processor::setwork(int trackIndex, int sessionIndex, int workIndex, int workId)        
 {
     if (this->parallelTracks > trackIndex)
     {
@@ -73,7 +77,8 @@ void Processor::setwork(int trackIndex, int sessionIndex, int workIndex, int wor
     }
 }
 
-void Processor::printprocessor(char *filename)   //печать процессов
+//printing processors
+void Processor::printprocessor(char *filename)   
 {
     ofstream ofile(filename);
 
@@ -93,6 +98,6 @@ void Processor::printprocessor(char *filename)   //печать процессов
         ofile << "\n";
     }
     ofile.close();
-    // cout << "Результат смотреть в:";
-    // printf("%s :)\n", filename);
+    cout << "The result is viewed in:";
+    printf("%s :)\n", filename);
 }
