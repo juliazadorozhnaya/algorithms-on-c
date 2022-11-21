@@ -1,0 +1,6 @@
+/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/rebuild_cache.dir
+/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/Functions.dir
+/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/edit_cache.dir
+/home/parallels/WORK/ASVK4/FunctionsTask/build/Google_tests/CMakeFiles/rebuild_cache.dir
+/home/parallels/WORK/ASVK4/FunctionsTask/build/Google_tests/CMakeFiles/Gtests.dir
+/home/parallels/WORK/ASVK4/FunctionsTask/build/Google_tests/CMakeFiles/edit_cache.dir

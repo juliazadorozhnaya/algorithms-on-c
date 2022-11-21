@@ -1,0 +1,516 @@
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9d494/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9d494.dir/build.make CMakeFiles/cmTC_9d494.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9d494.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_9d494.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_9d494.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9d494.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_9d494.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9d494/fast' failed
+make: *** [cmTC_9d494/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_359f2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_359f2.dir/build.make CMakeFiles/cmTC_359f2.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_359f2.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_359f2.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_359f2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_359f2.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_359f2.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_359f2/fast' failed
+make: *** [cmTC_359f2/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e13a2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e13a2.dir/build.make CMakeFiles/cmTC_e13a2.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e13a2.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e13a2.dir/CheckSymbolExists.c.o   -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_e13a2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e13a2.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_e13a2.dir/CheckSymbolExists.c.o  -o cmTC_e13a2 
+CMakeFiles/cmTC_e13a2.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e13a2.dir/build.make:97: recipe for target 'cmTC_e13a2' failed
+make[1]: *** [cmTC_e13a2] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e13a2/fast' failed
+make: *** [cmTC_e13a2/fast] Error 2
+
+File /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_10cfd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_10cfd.dir/build.make CMakeFiles/cmTC_10cfd.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_10cfd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_10cfd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_10cfd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10cfd.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_10cfd.dir/CheckFunctionExists.c.o  -o cmTC_10cfd -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_10cfd.dir/build.make:97: recipe for target 'cmTC_10cfd' failed
+make[1]: *** [cmTC_10cfd] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_10cfd/fast' failed
+make: *** [cmTC_10cfd/fast] Error 2
+
+
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b4496/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b4496.dir/build.make CMakeFiles/cmTC_b4496.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b4496.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_b4496.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_b4496.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b4496.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_b4496.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b4496/fast' failed
+make: *** [cmTC_b4496/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3c442/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3c442.dir/build.make CMakeFiles/cmTC_3c442.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3c442.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_3c442.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_3c442.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3c442.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_3c442.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3c442/fast' failed
+make: *** [cmTC_3c442/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2d9c6/fast"
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_2d9c6.dir/build.make CMakeFiles/cmTC_2d9c6.dir/build
+make[2]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_2d9c6.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_2d9c6.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_2d9c6.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_2d9c6.dir/src.cxx.o' failed
+make[2]: *** [CMakeFiles/cmTC_2d9c6.dir/src.cxx.o] Error 1
+make[2]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_2d9c6/fast' failed
+make[1]: *** [cmTC_2d9c6/fast] Error 2
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f7936/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f7936.dir/build.make CMakeFiles/cmTC_f7936.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f7936.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_f7936.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_f7936.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_f7936.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_f7936.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f7936/fast' failed
+make: *** [cmTC_f7936/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e5b0f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e5b0f.dir/build.make CMakeFiles/cmTC_e5b0f.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e5b0f.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_e5b0f.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_e5b0f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e5b0f.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_e5b0f.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e5b0f/fast' failed
+make: *** [cmTC_e5b0f/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8b764/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8b764.dir/build.make CMakeFiles/cmTC_8b764.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8b764.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_8b764.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_8b764.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_8b764.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_8b764.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8b764/fast' failed
+make: *** [cmTC_8b764/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c1249/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c1249.dir/build.make CMakeFiles/cmTC_c1249.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c1249.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_c1249.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_c1249.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c1249.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_c1249.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c1249/fast' failed
+make: *** [cmTC_c1249/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a0dbd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a0dbd.dir/build.make CMakeFiles/cmTC_a0dbd.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a0dbd.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_a0dbd.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_a0dbd.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a0dbd.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_a0dbd.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a0dbd/fast' failed
+make: *** [cmTC_a0dbd/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_08516/fast"
+/usr/bin/make -f CMakeFiles/cmTC_08516.dir/build.make CMakeFiles/cmTC_08516.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_08516.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_08516.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_08516.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_08516.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_08516.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_08516/fast' failed
+make: *** [cmTC_08516/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_99c57/fast"
+/usr/bin/make -f CMakeFiles/cmTC_99c57.dir/build.make CMakeFiles/cmTC_99c57.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_99c57.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_99c57.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_99c57.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_99c57.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_99c57.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_99c57/fast' failed
+make: *** [cmTC_99c57/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_df306/fast"
+/usr/bin/make -f CMakeFiles/cmTC_df306.dir/build.make CMakeFiles/cmTC_df306.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_df306.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_df306.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_df306.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_df306.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_df306.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_df306/fast' failed
+make: *** [cmTC_df306/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d4ee6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d4ee6.dir/build.make CMakeFiles/cmTC_d4ee6.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d4ee6.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_d4ee6.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_d4ee6.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d4ee6.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_d4ee6.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d4ee6/fast' failed
+make: *** [cmTC_d4ee6/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_80072/fast"
+/usr/bin/make -f CMakeFiles/cmTC_80072.dir/build.make CMakeFiles/cmTC_80072.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_80072.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_80072.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_80072.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_80072.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_80072.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_80072/fast' failed
+make: *** [cmTC_80072/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f17dd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f17dd.dir/build.make CMakeFiles/cmTC_f17dd.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f17dd.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_f17dd.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_f17dd.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_f17dd.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_f17dd.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_f17dd/fast' failed
+make: *** [cmTC_f17dd/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_130c4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_130c4.dir/build.make CMakeFiles/cmTC_130c4.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_130c4.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_130c4.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_130c4.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_130c4.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_130c4.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_130c4/fast' failed
+make: *** [cmTC_130c4/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_858e8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_858e8.dir/build.make CMakeFiles/cmTC_858e8.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_858e8.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_858e8.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_858e8.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_858e8.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_858e8.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_858e8/fast' failed
+make: *** [cmTC_858e8/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9274d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9274d.dir/build.make CMakeFiles/cmTC_9274d.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9274d.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_9274d.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_9274d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9274d.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_9274d.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9274d/fast' failed
+make: *** [cmTC_9274d/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a2813/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a2813.dir/build.make CMakeFiles/cmTC_a2813.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a2813.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_a2813.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_a2813.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a2813.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_a2813.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a2813/fast' failed
+make: *** [cmTC_a2813/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6ecf4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6ecf4.dir/build.make CMakeFiles/cmTC_6ecf4.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6ecf4.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_6ecf4.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_6ecf4.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_6ecf4.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_6ecf4.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6ecf4/fast' failed
+make: *** [cmTC_6ecf4/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_962b6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_962b6.dir/build.make CMakeFiles/cmTC_962b6.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_962b6.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_962b6.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_962b6.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_962b6.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_962b6.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_962b6/fast' failed
+make: *** [cmTC_962b6/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_796b5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_796b5.dir/build.make CMakeFiles/cmTC_796b5.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_796b5.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_796b5.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_796b5.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_796b5.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_796b5.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_796b5/fast' failed
+make: *** [cmTC_796b5/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_965eb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_965eb.dir/build.make CMakeFiles/cmTC_965eb.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_965eb.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_965eb.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_965eb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_965eb.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_965eb.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_965eb/fast' failed
+make: *** [cmTC_965eb/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a955e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a955e.dir/build.make CMakeFiles/cmTC_a955e.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a955e.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_a955e.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_a955e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a955e.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_a955e.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a955e/fast' failed
+make: *** [cmTC_a955e/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d4d4c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d4d4c.dir/build.make CMakeFiles/cmTC_d4d4c.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d4d4c.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_d4d4c.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_d4d4c.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_d4d4c.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_d4d4c.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_d4d4c/fast' failed
+make: *** [cmTC_d4d4c/fast] Error 2
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported failed with the following output:
+Change Dir: /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3ce9a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3ce9a.dir/build.make CMakeFiles/cmTC_3ce9a.dir/build
+make[1]: Entering directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3ce9a.dir/src.cxx.o
+/usr/bin/c++    -Wall -std=c++17 -pthread -O3 -Dflag_supported   -Wno-error=deprecated-copy -std=gnu++1z -o CMakeFiles/cmTC_3ce9a.dir/src.cxx.o -c /home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: -Werror=deprecated-copy: no option -Wdeprecated-copy
+CMakeFiles/cmTC_3ce9a.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3ce9a.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_3ce9a.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/parallels/WORK/ASVK4/FunctionsTask/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3ce9a/fast' failed
+make: *** [cmTC_3ce9a/fast] Error 2
+
+Source file was:
+int main() { return 0; }
