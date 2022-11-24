@@ -1,0 +1,243 @@
+#include <algorithm>
+#include <numeric>
+#include <random>
+#include <utility>
+#include <chrono>
+#include <iostream>
+#include <cmath>
+
+#include "HillClimb.h"
+
+typedef std::chrono::high_resolution_clock Time;
+typedef std::chrono::duration<double> double_seconds;
+
+template <typename T>
+void print2dvector(const std::vector<std::vector<T>> vec) //one of the ways of vector display of information
+{
+    for (const auto &row : vec)
+    {
+        for (const auto &elem : row)
+            std::cout << elem << '\t';
+        std::cout << std::endl;
+    }
+}
+
+template <typename T>
+void print1dvector(const std::vector<T> vec)   //one of the ways of vector display of information
+
+{
+    for (const auto &e : vec)
+        std::cout << e << '\t';
+
+    std::cout << std::endl;
+}
+
+HillClimb::HillClimb(double **matrix, int p, int t, int k, int c)    //up on the chart
+{
+    distance_matrix = matrix;
+    parallel_tracks = p;
+    sessions_in_track = t;
+    works_in_session = k;
+    trade_of_coefficient = c;
+    dist = std::uniform_int_distribution<std::default_random_engine::result_type>(0, (works_in_session * parallel_tracks * sessions_in_track) - 1);
+}
+
+void HillClimb::construct_session_matrix(State initial_state)
+{
+    if (session_distance_matrix.empty())
+    {
+        session_distance_matrix.resize(sessions_in_track * parallel_tracks * works_in_session);
+        for (auto &v : session_distance_matrix)
+            v.resize(parallel_tracks * sessions_in_track);
+    }
+
+    auto sessions = state_to_sessions(initial_state);
+
+    for (size_t i = 0; i != session_distance_matrix.size(); ++i)
+    {
+        for (size_t j = 0; j != sessions.size(); ++j)
+        {
+            auto dist = 0.0;
+            for (const auto &e : sessions[j])
+            {
+                dist += distance_matrix[i][e];
+            }
+            session_distance_matrix[i][j] = dist;
+        }
+    }
+}
+
+std::vector<std::vector<int>> HillClimb::state_to_sessions(State state)
+{
+    std::vector<std::vector<int>> blocks;
+
+    for (auto it = state.cbegin(); it != state.cend(); it += works_in_session)
+        blocks.push_back(std::vector<int>(it, it + works_in_session));
+
+    return blocks;
+}
+
+State HillClimb::greedy_initialize()
+{
+    return State();
+}
+
+State HillClimb::random_initialize()
+{
+    State random_state(parallel_tracks * sessions_in_track * works_in_session);
+    std::iota(random_state.begin(), random_state.end(), 0);
+
+    std::shuffle(random_state.begin(), random_state.end(), rng);
+    return random_state;
+}
+
+std::pair<int, int> HillClimb::next_state()
+{
+    size_t cnt = 0;
+    int i, j;
+    do
+    {
+        i = dist(rng);
+        j = dist(rng);
+        cnt += 1;
+    } while (((i + works_in_session) / works_in_session) == ((j + works_in_session) / works_in_session) && cnt < 10);
+
+    return std::make_pair(i, j);
+}
+
+void HillClimb::update_state(int index_a, int index_b, State &state)   //updating information
+{
+    int a = state[index_a];
+    int b = state[index_b];
+    int n = parallel_tracks * sessions_in_track * works_in_session;
+    state[index_a] = b;
+    state[index_b] = a;
+    int session_seq_a = ((index_a + works_in_session) / works_in_session) - 1;
+    int session_seq_b = ((index_b + works_in_session) / works_in_session) - 1;
+
+    for (int i = 0; i != n; ++i)
+    {
+        session_distance_matrix[i][session_seq_a] += distance_matrix[i][b] - distance_matrix[i][a];
+        session_distance_matrix[i][session_seq_b] += distance_matrix[i][a] - distance_matrix[i][b];
+    }
+}
+
+double HillClimb::score_increment(int index_a, int index_b, State state) const
+{
+    double change = 0;
+    int a = state[index_a];
+    int b = state[index_b];
+    int session_seq_a = ((index_a + works_in_session) / works_in_session) - 1;
+    int session_seq_b = ((index_b + works_in_session) / works_in_session) - 1;
+    int works_in_time_slot = works_in_session * parallel_tracks;
+    int time_slot_a = ((index_a + works_in_time_slot) / works_in_time_slot) - 1;
+    int time_slot_b = ((index_b + works_in_time_slot) / works_in_time_slot) - 1;
+    if (session_seq_a == session_seq_b)
+        return 0;
+    else if (time_slot_a == time_slot_b)
+        change = (trade_of_coefficient + 1) * (session_distance_matrix[a][session_seq_a] + session_distance_matrix[b][session_seq_b] - session_distance_matrix[a][session_seq_b] - session_distance_matrix[b][session_seq_a] + 2 * distance_matrix[a][b]);
+
+    else
+    {
+        change = (trade_of_coefficient + 1) * (session_distance_matrix[a][session_seq_a] + session_distance_matrix[b][session_seq_b] - session_distance_matrix[a][session_seq_b] - session_distance_matrix[b][session_seq_a]) + 2 * distance_matrix[a][b];
+
+        for (int i = 0; i < parallel_tracks; ++i)
+            change += trade_of_coefficient * (session_distance_matrix[a][time_slot_b * parallel_tracks + i] + session_distance_matrix[b][time_slot_a * parallel_tracks + i] - session_distance_matrix[a][time_slot_a * parallel_tracks + i] - session_distance_matrix[b][time_slot_b * parallel_tracks + i]);
+    }
+
+    return change;
+}
+
+double HillClimb::score(State state)
+{
+    double score1 = 0.0;
+    for (int i = 0; i < parallel_tracks; i++)
+        for (int j = 0; j < sessions_in_track; j++)
+            for (int k = 0; k < works_in_session; k++)
+                for (int l = k + 1; l < works_in_session; l++)
+                {
+                    int index1 = j * (works_in_session * parallel_tracks) + i * works_in_session + k;
+                    int index2 = j * (works_in_session * parallel_tracks) + i * works_in_session + l;
+                    score1 += 1 - distance_matrix[state[index1]][state[index2]];
+                }
+
+    // Sum of distances for competing works.
+    double score2 = 0.0;
+    for (int i = 0; i < parallel_tracks; i++)
+        for (int j = 0; j < sessions_in_track; j++)
+            for (int k = 0; k < works_in_session; k++)
+                for (int l = i + 1; l < parallel_tracks; l++)
+                    for (int m = 0; m < works_in_session; m++)
+                    {
+                        int index1 = j * (works_in_session * parallel_tracks) + i * works_in_session + k;
+                        int index2 = j * (works_in_session * parallel_tracks) + l * works_in_session + m;
+                        score2 += distance_matrix[state[index1]][state[index2]];
+                    }
+    double score = score1 + trade_of_coefficient * score2;
+    return score;
+}
+
+State HillClimb::hill_climb(bool random_init, double duration, const int seed = 0)   //minute description of the extremum point on the graph
+{
+    duration *= 60; // Assumed in minutes originally
+    auto initial_time = Time::now();
+    decltype(initial_time) now;
+    decltype(now - initial_time) dur;
+    decltype(std::chrono::duration_cast<double_seconds>(dur)) secs;
+
+    State state, best_state;
+    auto n = parallel_tracks * sessions_in_track * works_in_session;
+    auto count_limit = static_cast<int>(std::pow(n, 2));
+    rng.seed(seed);
+
+    double best_score = 0;
+
+    while (secs.count() < duration)
+    {
+        if (random_init)
+            state = random_initialize();
+        else
+            state = greedy_initialize();
+        construct_session_matrix(state);
+
+        double accumulated_score = 0;
+        double objective_function = score(state);
+        for (int cnt = 0; cnt != count_limit && secs.count() < duration; ++cnt)
+        {
+            auto pair = next_state();
+            auto index_a = pair.first;
+            auto index_b = pair.second;
+            double score = score_increment(index_a, index_b, state);
+            if (score > 0)
+            {
+                accumulated_score += score;
+                update_state(index_a, index_b, state);
+                cnt = 0;
+            }
+            else
+            {
+                double p = std::exp(score * (cnt + 1));
+                bool update = static_cast<bool>(std::bernoulli_distribution(p)(rng));
+
+                if (update)
+                {
+                    accumulated_score += score;
+                    update_state(index_a, index_b, state);
+                }
+            }
+
+            now = Time::now();
+            dur = now - initial_time;
+            secs = std::chrono::duration_cast<double_seconds>(dur);
+
+            std::cout << secs.count() << " " << duration << std::endl;
+        }
+
+        if ((objective_function + accumulated_score) > best_score)
+        {
+            best_score = objective_function + accumulated_score;
+            best_state = state;
+        }
+    };
+    return best_state;
+}

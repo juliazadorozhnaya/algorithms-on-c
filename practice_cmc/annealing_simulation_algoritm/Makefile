@@ -1,47 +1,22 @@
-# Specify the final target name
-EXE := res
+PROGNAME = main
+LIBS = 
+INCLUDES = -I/usr/local/include
+LDFLAGS = -L./
+OBJECTS = main.o Conference.o Session.o SessionOrganizer.o Track.o HillClimb.o
 
-# Specify the source files
-# Effectively list all source files in the current directory
-SRC := $(wildcard *.cpp)
+CFLAGS = -Wall -Wextra -O2 -DNDEBUG -march=native -std=c++11 -pedantic -fpermissive
 
-# From the source file list, get the corresponding object file list
-# This is a clearer syntax for $(patsubst %.cpp,%.o,$(SRC))
-OBJ := $(SRC:.cpp=.o)
+all: $(PROGNAME)
 
-# From the object file list, get the dependency file list to handle automatic
-# recompilation when a header file is modified
-DEP := $(OBJ:.o=.d)
+$(PROGNAME): $(OBJECTS)
+	@mkdir -p bin
+	g++ -O2 -DNDEBUG -march=native -o bin/$(PROGNAME) build/*.o $(LIBS) $(INCLUDES) $(LDFLAGS)
 
-# Specify preprocessor flags (this is a built-in variable)
-CPPFLAGS := -I../include
-# Required flags to enable the automatic dependency generation by the compiler
-CPPFLAGS += -MMD -MP
+$(OBJECTS): Makefile
 
-# Specify compiler flags (this is a built-in variable)
-# Here some basic warning flags
-CXXFLAGS := -std=c++20 -O2
+%.o: %.cpp
+	@mkdir -p build
+	g++ -c $(CFLAGS) $(INCLUDES) -o build/$@ $<
 
-# Specify linker flags (this is a built-in variable)
-LDFLAGS := -L../lib
-
-# Specify linker libraries (this is a built-in variable)
-# m is the maths library
-LDLIBS := -lm
-
-# Tell make that these target are not real files
-.PHONY: all clean
-
-# Now the standard primary rule
-all: $(EXE)
-
-# How do we make $(EXE) ? Remember the recipe describe the linking phase
-$(EXE): $(OBJ)
-	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
-
-# Let's clean up the mess
 clean:
-	$(RM) $(EXE) $(OBJ) $(DEP)
-
-# Don't forget to include the dependency files to let make know when to recompile
--include $(DEP)
+	rm -rf build *.o $(PROGNAME)
