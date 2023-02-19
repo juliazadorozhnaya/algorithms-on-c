@@ -1,2 +1,0 @@
-package train_algo_yandex
-gi
