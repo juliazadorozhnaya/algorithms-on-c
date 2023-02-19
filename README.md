@@ -1,4 +1,4 @@
-# Algorithms courses
+# CMC MSU courses
 
 ### About repo
 * [Проектирование больших систем на С++](https://github.com/juliazadorozhnaya/Algorithms/tree/main/C%2B%2B_Design_and_Programming)
